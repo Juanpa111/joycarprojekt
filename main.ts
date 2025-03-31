@@ -1,6 +1,8 @@
 function linefinder() {
-    if (JoyCar.linefinder(SensorLCRSelection.Left) && (JoyCar.linefinder(SensorLCRSelection.Center) && JoyCar.linefinder(SensorLCRSelection.Right))) {
+    if (JoyCar.linefinder(SensorLCRSelection.Left) && (!JoyCar.linefinder(SensorLCRSelection.Center) && JoyCar.linefinder(SensorLCRSelection.Right))) {
         JoyCar.drive(FRLRDirection.Forward, 10)
+    } else if (JoyCar.linefinder(SensorLCRSelection.Left) && (JoyCar.linefinder(SensorLCRSelection.Center) && JoyCar.linefinder(SensorLCRSelection.Right))) {
+        JoyCar.drive(FRLRDirection.Right, 5)
     }
     
 }
